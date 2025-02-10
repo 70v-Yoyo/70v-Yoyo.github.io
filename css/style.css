@@ -54,6 +54,15 @@ button {
   position: relative;
   z-index: 10;
 }
+input[type="checkbox"] {
+  display: inline-block;
+  visibility: visible;
+  opacity: 1;
+  width: 20px;
+  height: 20px;
+  margin: 5px;
+  -webkit-appearance: auto !important;
+}
 .archives-wrap {
   position: relative;
 }
