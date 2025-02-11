@@ -100,11 +100,11 @@ function getRandomColor() {
 	  daytip.classList.add('tooltip');
 	  together.appendChild(daytip);
 	  calendarElement.innerHTML = ''; // 清空之前的内容
-	  month_text=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec']
+	  month_text=['Jan','↓','Dec']
 	  for (let month = 0; month < 12; month++) {
 		const monthContainer = document.createElement('div');
 		monthContainer.classList.add('month-container');//添加一个新的类名
-		 if(month_float.children.length<12){
+		 if(month_float.children.length<3){
 			// 添加月份头部
 			const monthHeader = document.createElement('div');
 			monthHeader.classList.add('month-header');
@@ -249,7 +249,7 @@ function getRandomColor() {
 
   function all(){
 	//这里插入checkedDays变量
-	checkedDays = ["2025-02-10","2025-02-08","2025-02-11","2025-02-11"];
+	checkedDays = ["2025-02-08","2025-02-11","2025-02-10","2025-02-11"];
 	currentYear=new Date().getFullYear();
 	//默认今年
 	get_elements();

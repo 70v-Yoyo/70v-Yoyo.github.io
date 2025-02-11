@@ -58,6 +58,7 @@
 .month_float{
   width:30px;
   display: inline-block;
+  margin-bottom: 1px;
 }
 
 .tooltip{
