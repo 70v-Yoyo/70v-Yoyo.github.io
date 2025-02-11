@@ -11,8 +11,10 @@
     padding-left:10px;
   }
   .calendar {
-    position: relative;
+    display: inline-block;
     margin:10px auto;
+    height: 200px;
+    width: 500px;
   }
   
   .grid-item {
@@ -49,10 +51,9 @@
   margin: 4px 0;
 }
 .month_float{
-  position:absolute;
-  left: 37%;
-  top: -4px;
+  width:12px;
   font-size: 6px;
+  display: inline-block;
 }
 .tooltip{
   border: 1px solid #ccc;
@@ -80,11 +81,11 @@ select{
   color:#ccc;
 }
 .fireworks{
-  position:relative;
+  position:absolute;
   width: 2px;
   height: 2px;
   border-radius: 50%;
-  animation: explode 1s ease-out forwards;
+  animation: explode 0.5s ease-out forwards;
   opacity: 0.5;
   background-color: aqua;
 }

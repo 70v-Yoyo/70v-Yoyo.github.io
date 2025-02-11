@@ -7,8 +7,9 @@ function get_elements(){
 	p.appendChild(together);
 	console.log(together);
 
+	inline=document.createElement('div');
+	together.appendChild(inline);
 	
-
 	title=document.getElementsByClassName('c_title')[0];
 	if (title===undefined){//==会进行类型转换 ===不会
 	  title=document.createElement('span');
@@ -36,6 +37,18 @@ function get_elements(){
 	  cpright.classList.add('cpright');
 	  together.appendChild(cpright);
 	}
+	inline.appendChild(title);
+	inline.appendChild(label);
+	inline.appendChild(yearSelect);
+	inline.appendChild(cpright);
+
+	month_float=document.getElementsByClassName('month_float')[0];
+	if(month_float===undefined){
+		month_float = document.createElement('div');
+		month_float.classList.add('month_float');
+		together.appendChild(month_float);//添加一个新的类名
+	}
+
 	calendarElement=document.getElementsByClassName('calendar')[0];
 	if(calendarElement===undefined){
 	  calendarElement = document.createElement('div');
@@ -87,17 +100,17 @@ function getRandomColor() {
 	  daytip.classList.add('tooltip');
 	  together.appendChild(daytip);
 	  calendarElement.innerHTML = ''; // 清空之前的内容
-	  const month_float = document.createElement('div');
-	  month_float.classList.add('month_float');
+	  
 	  for (let month = 0; month < 12; month++) {
-		  const monthContainer = document.createElement('div');
-		  monthContainer.classList.add('month-container');//添加一个新的类名
-  
-		  // 添加月份头部
-		  const monthHeader = document.createElement('div');
-		  monthHeader.classList.add('month-header');
-		  monthHeader.textContent = `${month + 1}月`;
-		  month_float.appendChild(monthHeader);
+		const monthContainer = document.createElement('div');
+		monthContainer.classList.add('month-container');//添加一个新的类名
+		 if(month_float.children.length<12){
+			// 添加月份头部
+			const monthHeader = document.createElement('div');
+			monthHeader.classList.add('month-header');
+			monthHeader.textContent = `${month + 1}月`;
+			month_float.appendChild(monthHeader);
+		 }
 		  
 		  // 渲染每个月的打卡格子
 		  const daysInMonth = getDaysInMonth(month, year);
@@ -131,7 +144,7 @@ function getRandomColor() {
 					firework.style.backgroundColor = color;
 					firework.style.position = 'absolute';
 					const centerX=`${rect.left}`;
-					const centerY=`${rect.top+ scrollY-885}`; //rect.top+ scrollY才是元素的绝对位置 相对于整个网页的坐标
+					const centerY=`${rect.top+ scrollY-210}`; //rect.top+ scrollY才是元素的绝对位置 相对于整个网页的坐标
 					console.log(rect.top,centerY)
 					// 设置烟花的初始位置为点击位置
 					container.style.left = centerX+'px';
@@ -172,7 +185,6 @@ function getRandomColor() {
 		  calendarElement.appendChild(monthContainer);
 	}
 	//console.log(month_float);
-	calendarElement.appendChild(month_float);//添加一个新的类名
 	func_tooltip();
   }
   
