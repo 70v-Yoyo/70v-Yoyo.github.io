@@ -120,7 +120,7 @@ function getRandomColor() {
 			  dayElement.addEventListener('click', (event) => {
 				const rect = event.target.getBoundingClientRect();
 				
-				let numParticles = 30; // 粒子的数量
+				let numParticles = 10; // 粒子的数量
 				container=document.getElementsByClassName('fireworks')[0];
 				for (let i = 0; i < numParticles; i++) {
 					let firework = document.createElement('div');
@@ -130,39 +130,40 @@ function getRandomColor() {
 					let color = getRandomColor();
 					firework.style.backgroundColor = color;
 					firework.style.position = 'absolute';
-					const centerX=`${rect.left + scrollX}`;
-					const centerY=`${rect.top+scrollY -400}`;
+					const centerX=`${rect.left + scrollX-12}`;
+					const centerY=`${rect.top+scrollY -670}`;
 					// 设置烟花的初始位置为点击位置
 					container.style.left = centerX+'px';
 					container.style.top =centerY+'px';
-					firework.style.left = `${centerX/2}px`;
-					firework.style.top =  `${centerY/2}px`;
+					firework.style.left = `0px`;
+					firework.style.top =  `0px`;
 					firework.style.width = '2px';
 					firework.style.height = '2px';
 					firework.style.zIndex='10';
 					firework.style.display='block';
-					const angle=(Math.PI/180)*i*(360/30);
+					console.log(Math.PI/180)
+					const angle=(Math.PI/180)*(i+1)*(360/10);
 					// 计算目标点的坐标
-					const x = Math.cos(angle) * 5;
-					const y = Math.sin(angle) * 5;
+					const x = Math.cos(angle) * 4;
+					const y = Math.sin(angle) * 4;
 					console.log(angle,x,y,centerX,centerY);
 					 // 使用 transform 来计算并设置粒子的位置
 					firework.style.transform = `translate(${x}px, ${y}px)`;
 					// 设置烟花的飞行方向
-					firework.style.animationName = 'explode';
-					firework.style.animationTimingFunction = 'ease-out';
+					// firework.style.animationName = 'explode';
+					// firework.style.animationTimingFunction = 'ease-out';
 					//console.log(firework)
 					
 					container.appendChild(firework);
-					console.log(angle,x,y,firework.style.transform);
+					console.log(firework.style.transform);
 					// 或者使用这种方法触发样式更新
 					container.style.display = 'none';
 					container.offsetHeight;  // 强制浏览器重绘
 					container.style.display = 'block';
 					//清理：动画结束后移除烟花元素
-					firework.addEventListener('animationend', function() {
-						firework.remove();
-					});
+					// firework.addEventListener('animationend', function() {
+					// 	firework.remove();
+					// });
 				}
 			  });
 		  }
@@ -222,7 +223,7 @@ function getRandomColor() {
 		daytip.style.position='absolute';
 		//console.log(block,scrollX);
 		daytip.style.left=`${rect.left + scrollX}px`;
-		daytip.style.top=`${rect.top+scrollY -250}px`;
+		daytip.style.top=`${rect.top+scrollY -270}px`;
 		daytip.style.display='block';
 		
 		})
@@ -235,7 +236,7 @@ function getRandomColor() {
 
   function all(){
 	//这里插入checkedDays变量
-	checkedDays = ["2025-02-10","2025-02-08"];
+	checkedDays = ["2025-02-10","2025-02-08","2025-02-11","2025-02-11"];
 	currentYear=new Date().getFullYear();
 	//默认今年
 	get_elements();

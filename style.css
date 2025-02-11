@@ -81,10 +81,10 @@ select{
 }
 .fireworks{
   position:relative;
-  width: 100px;
-  height: 100px;
+  width: 2px;
+  height: 2px;
   border-radius: 50%;
-  animation: explode 10s ease-out forwards;
+  animation: explode 1s ease-out forwards;
   opacity: 0.5;
   background-color: aqua;
 }
@@ -95,7 +95,7 @@ select{
       opacity: 1;
   }
   100% {
-      transform: scale(4);
+      transform: scale(3);
       opacity: 0;
   }
 }
