@@ -3,7 +3,7 @@
     font-family: Arial, sans-serif;
     text-align: center;
     box-sizing: border-box;/*盒模型*/
-    height: max-content;
+    height: 220px;
     padding:8px 0px;
     border:0.1px solid #d1d9e0;
     border-radius: 5px;
@@ -13,7 +13,7 @@
   .calendar {
     display: inline-block;
     margin:10px auto;
-    height: 200px;
+    height: 180px;
     width: 500px;
   }
   
