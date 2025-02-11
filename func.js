@@ -130,8 +130,9 @@ function getRandomColor() {
 					let color = getRandomColor();
 					firework.style.backgroundColor = color;
 					firework.style.position = 'absolute';
-					const centerX=`${rect.left + scrollX-12}`;
-					const centerY=`${rect.top+scrollY -670}`;
+					const centerX=`${rect.left}`;
+					const centerY=`${rect.top+ scrollY-885}`; //rect.top+ scrollY才是元素的绝对位置 相对于整个网页的坐标
+					console.log(rect.top,centerY)
 					// 设置烟花的初始位置为点击位置
 					container.style.left = centerX+'px';
 					container.style.top =centerY+'px';
@@ -236,7 +237,7 @@ function getRandomColor() {
 
   function all(){
 	//这里插入checkedDays变量
-	checkedDays = ["2025-02-10","2025-02-08","2025-02-11","2025-02-11"];
+	checkedDays = ["2025-02-10","2025-02-11","2025-02-08","2025-02-11"];
 	currentYear=new Date().getFullYear();
 	//默认今年
 	get_elements();
