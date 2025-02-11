@@ -1,19 +1,22 @@
 
   .together{
-    font-family: Arial, sans-serif;
+    display: block;
+    font-family: "微软雅黑",  sans-serif !important;
+    width:max-content;
     text-align: center;
     box-sizing: border-box;/*盒模型*/
     height: max-content;
     padding:8px 0px;
-    border:0.1px solid #d1d9e0;
+    border-top:0.1px dashed #d1d9e0;
+    border-bottom:0.1px dashed #d1d9e0;
     border-radius: 5px;
     margin: 10px auto;
     padding-left:10px;
   }
   .calendar {
     display: inline-block;
-    margin:10px auto;
-    height: 200px;
+    margin:auto;
+    height: 220px;
     width: 500px;
   }
   
@@ -40,6 +43,7 @@
   }
   /* 月份格子容器样式 */
 .month-container {
+  width:500px;
   display: grid;
   grid-template-columns: repeat(31, 11px); /* 每周7天 */
   gap: 4px;
@@ -48,14 +52,17 @@
 }
 
 .month-header {
-  margin: 4px 0;
+  width: 30px;
+  font-size: 8px;
 }
 .month_float{
-  width:12px;
-  font-size: 6px;
+  width:30px;
   display: inline-block;
+  margin-bottom: 1px;
 }
+
 .tooltip{
+  width:80px;
   border: 1px solid #ccc;
   background-color: #060d2a;
   padding: 2px 5px;
@@ -72,10 +79,14 @@ span{
   margin-right: 10px;
 }
 select{
+  width: 60px;
   border: 1px solid lightblue;
-  text-align: right;
+  text-align: center;
   font-size: 11px;
   margin: 0px 20px 0px 2px;
+}
+option{
+  text-align: center;
 }
 .cpright{
   color:#ccc;

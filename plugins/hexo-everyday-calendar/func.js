@@ -65,7 +65,7 @@ function get_elements(){
   
   // 渲染年份选择器
   function renderYearSelect(currentYear) {
-	for (let i = currentYear - 5; i <= currentYear + 5; i++) {
+	for (let i = currentYear - 5; i <= currentYear; i++) {
 	  const option = document.createElement('option');
 	  option.value = i;
 	  option.text = i;
@@ -100,15 +100,15 @@ function getRandomColor() {
 	  daytip.classList.add('tooltip');
 	  together.appendChild(daytip);
 	  calendarElement.innerHTML = ''; // 清空之前的内容
-	  
+	  month_text=['Jan','↓','Dec']
 	  for (let month = 0; month < 12; month++) {
 		const monthContainer = document.createElement('div');
 		monthContainer.classList.add('month-container');//添加一个新的类名
-		 if(month_float.children.length<12){
+		 if(month_float.children.length<3){
 			// 添加月份头部
 			const monthHeader = document.createElement('div');
 			monthHeader.classList.add('month-header');
-			monthHeader.textContent = `${month + 1}月`;
+			monthHeader.textContent = month_text[month];
 			month_float.appendChild(monthHeader);
 		 }
 		  
