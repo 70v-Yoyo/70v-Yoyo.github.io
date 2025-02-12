@@ -65,7 +65,7 @@ function get_elements(){
   
   // 渲染年份选择器
   function renderYearSelect(currentYear) {
-	for (let i = currentYear - 5; i <= currentYear + 5; i++) {
+	for (let i = currentYear - 5; i <= currentYear; i++) {
 	  const option = document.createElement('option');
 	  option.value = i;
 	  option.text = i;
@@ -249,7 +249,7 @@ function getRandomColor() {
 
   function all(){
 	//这里插入checkedDays变量
-	checkedDays = ["2025-02-08","2025-02-11","2025-02-10","2025-02-11"];
+	checkedDays = ["2025-02-11","2025-02-08","2025-02-11","2025-02-10","2025-02-12"];
 	currentYear=new Date().getFullYear();
 	//默认今年
 	get_elements();

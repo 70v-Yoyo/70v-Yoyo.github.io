@@ -81,9 +81,12 @@ span{
 select{
   width: 60px;
   border: 1px solid lightblue;
-  text-align: right;
+  text-align: center;
   font-size: 11px;
   margin: 0px 20px 0px 2px;
+}
+option{
+  text-align: center;
 }
 .cpright{
   color:#ccc;
