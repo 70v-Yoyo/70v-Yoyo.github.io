@@ -1,0 +1,34 @@
+name: Deploy Hexo blog to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main  # 监听推送到 main 分支时触发
+  pull_request:
+    branches:
+      - main  # 如果是 PR 合并到 main 分支时触发
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest  # 使用 GitHub 提供的最新 Ubuntu 环境
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2  # 检出代码到工作空间
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v2  # 设置 Node.js 环境
+      with:
+        node-version: '14'  # 设置 Node.js 版本
+
+    - name: Install dependencies
+      run: npm install  # 安装项目依赖
+
+    - name: Generate Hexo site
+      run: hexo generate  # 生成静态网站
+
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3  # 使用 peaceiris/actions-gh-pages 部署到 GitHub Pages
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}  # 使用自动生成的 GitHub Token
+        publish_dir: ./public  # 发布的文件夹，一般是 Hexo 的 ./public 目录
