@@ -14,14 +14,14 @@ function get_elements(){
 	title=document.getElementsByClassName('c_title')[0];
 	if (title===undefined){//==会进行类型转换 ===不会
 	  title=document.createElement('span');
-	  title.textContent='打卡墙';
+	  title.textContent='Contribution';
 	  title.classList.add('c_title');
 	  together.appendChild(title);
 	}
 	label=document.getElementsByClassName('c_label')[0];
 	if(label===undefined){
 	  label=document.createElement('label');
-	  label.textContent='选择年份:';
+	  label.textContent='Select Year:';
 	  label.classList.add('c_label')
 	  together.appendChild(label);
 	}
@@ -280,7 +280,7 @@ function getRandomColor() {
 
   function all(){
 	//这里插入checkedDays变量
-	checkedDays = {"2025-02-11":2,"2025-02-13":1,"2025-02-14":1,"2025-02-15":2,"2025-02-12":1,"2025-02-10":1,"2025-02-16":1,"2025-02-17":1,"2025-02-20":2,"2025-02-18":1};
+	checkedDays = {"2025-02-10":1,"2025-02-15":2,"2025-02-11":2,"2025-02-12":1,"2025-02-13":1,"2025-02-14":1,"2025-02-16":1,"2025-02-17":1,"2025-02-18":1,"2025-02-20":2};
 	currentYear=new Date().getFullYear();
 	//默认今年
 	get_elements();

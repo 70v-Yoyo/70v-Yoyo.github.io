@@ -2,12 +2,20 @@ html {
   font-size: 1px ; /* 将根元素的字体大小设置为 1px */
 }
 
-@media (max-width: 550px) {
+@media (max-width: 650px) {
   html {
-    font-size: 0.6px;  /* 当视口宽度小于 550px 时，字体大小为 0.5px */
+    font-size: 0.5px;  /* 当视口宽度小于 650px 时，字体大小为 0.5px */
   }
 }
-
+@media (min-width: 651px) and (max-width: 1566px)  {
+  html {
+    font-size: 0.7px;  
+  }
+}
+.c_title{
+  font-size: 16rem;
+  font-weight: bold;
+}
   .together{
     display: block;
     font-family: "微软雅黑",  sans-serif !important;
@@ -96,6 +104,7 @@ html {
 label,span,.cpright,.lessmore{
   font-size: 12rem;
 }
+
 .lessmore{
   text-align: right;
   margin-right: 5rem;
@@ -103,13 +112,20 @@ label,span,.cpright,.lessmore{
 span{
   margin-right: 20rem;
 }
+label{
+  /* margin-left: 60rem; */
+}
 select{
-  text-align: center; /* 尝试居中文本 */
+  /* text-align: center;  */
   text-align-last: center; /* 确保选中的项居中 */
-  width: 60rem;
-  border-bottom: 1rem solid lightblue;
+  width: 50rem;
+  line-height: 50rem;
+  /* border-left: 1rem solid lightblue; */
+  /* border-right: 1rem solid lightblue; */
   font-size: 11rem;
-  margin: 0rem 20rem 0rem 3rem;
+  /* margin: 0rem 40rem 0rem 3rem; */
+  border-radius: 90%;
+  
 }
 option{
 
