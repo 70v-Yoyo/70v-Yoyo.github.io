@@ -1,5 +1,11 @@
 html {
-  font-size: 0.8px !important; /* 将根元素的字体大小设置为 18px */
+  font-size: 1px ; /* 将根元素的字体大小设置为 1px */
+}
+
+@media (max-width: 550px) {
+  html {
+    font-size: 0.8px;  /* 当视口宽度小于 550px 时，字体大小为 0.8px */
+  }
 }
 
   .together{
