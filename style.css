@@ -119,12 +119,14 @@ select{
   /* text-align: center;  */
   text-align-last: center; /* 确保选中的项居中 */
   width: 50rem;
-  line-height: 50rem;
+  height:20rem;
+  line-height: 20rem;
   /* border-left: 1rem solid lightblue; */
   /* border-right: 1rem solid lightblue; */
   font-size: 11rem;
-  /* margin: 0rem 40rem 0rem 3rem; */
-  border-radius: 90%;
+  margin: 15rem 5rem 5rem 5rem;
+  border-radius: 50%;
+  background-color: transparent !important;
   
 }
 option{
