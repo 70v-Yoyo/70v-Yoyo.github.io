@@ -1,6 +1,5 @@
-
 html {
-  font-size: 1px !important; /* 将根元素的字体大小设置为 18px */
+  font-size: 0.8px !important; /* 将根元素的字体大小设置为 18px */
 }
 
   .together{
