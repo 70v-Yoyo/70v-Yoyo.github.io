@@ -4,7 +4,7 @@ html {
 
 @media (max-width: 550px) {
   html {
-    font-size: 0.8px;  /* 当视口宽度小于 550px 时，字体大小为 0.8px */
+    font-size: 0.7px;  /* 当视口宽度小于 550px 时，字体大小为 0.8px */
   }
 }
 
