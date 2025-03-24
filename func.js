@@ -3,6 +3,10 @@ function get_elements(){
 	colors=['#9BE9A8','#3FC463','#31A14E','#216E39']
 	// 获取 DOM 元素
 	p= document.getElementsByClassName('site-body')[0];//前面什么都没加const var的为全局变量
+	if(p==undefined){
+		console.log('文档中没有site-body类')
+		return false;
+	}
 	together=document.createElement('div');
 	together.classList.add('together');
 	p.appendChild(together);
@@ -14,14 +18,14 @@ function get_elements(){
 	title=document.getElementsByClassName('c_title')[0];
 	if (title===undefined){//==会进行类型转换 ===不会
 	  title=document.createElement('span');
-	  title.textContent='打卡墙';
+	  title.textContent='Contribution';
 	  title.classList.add('c_title');
 	  together.appendChild(title);
 	}
 	label=document.getElementsByClassName('c_label')[0];
 	if(label===undefined){
 	  label=document.createElement('label');
-	  label.textContent='选择年份:';
+	  label.textContent='Select Year:';
 	  label.classList.add('c_label')
 	  together.appendChild(label);
 	}
@@ -280,10 +284,11 @@ function getRandomColor() {
 
   function all(){
 	//这里插入checkedDays变量
-	checkedDays = {"2025-03-24":5,"2025-02-10":1,"2025-03-09":2,"2025-03-04":2,"2025-02-11":2,"2025-02-12":1,"2025-02-13":1,"2025-02-15":2,"2025-02-14":1,"2025-02-16":1,"2025-02-18":1,"2025-02-20":2,"2025-02-17":1,"2025-02-22":1,"2025-02-23":1,"2025-02-24":1,"2025-02-25":1,"2025-02-27":1,"2025-02-21":1,"2025-02-26":1,"2025-03-01":1,"2025-03-02":1,"2025-03-13":1,"2025-03-11":1,"2025-03-12":1,"2025-03-17":1,"2025-03-16":1,"2025-03-18":1,"2025-03-20":1,"2025-03-14":1,"2025-03-03":1,"2025-03-22":1,"2025-03-05":1,"2025-03-06":1,"2025-03-10":1,"2025-03-07":1,"2025-03-08":1};
+	checkedDays = {"2025-02-10":1,"2025-02-15":2,"2025-03-24":5,"2025-02-11":2,"2025-03-09":2,"2025-02-12":1,"2025-02-14":1,"2025-03-04":2,"2025-02-16":1,"2025-02-17":1,"2025-02-20":2,"2025-02-18":1,"2025-02-13":1,"2025-02-21":1,"2025-02-22":1,"2025-02-23":1,"2025-02-25":1,"2025-02-24":1,"2025-02-27":1,"2025-02-26":1,"2025-03-02":1,"2025-03-01":1,"2025-03-12":1,"2025-03-13":1,"2025-03-11":1,"2025-03-14":1,"2025-03-16":1,"2025-03-17":1,"2025-03-20":1,"2025-03-18":1,"2025-03-03":1,"2025-03-05":1,"2025-03-06":1,"2025-03-07":1,"2025-03-22":1,"2025-03-08":1,"2025-03-10":1};
 	currentYear=new Date().getFullYear();
 	//默认今年
-	get_elements();
+	let flag=get_elements();
+	if(flag==false)return ;
 	// 初始化年份选择器和打卡墙
 	renderYearSelect(currentYear);
 	// 监听年份选择变化

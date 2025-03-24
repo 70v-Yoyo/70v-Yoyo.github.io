@@ -1,5 +1,18 @@
 @import url("http://fonts.googleapis.com/css?family=Open+Sans:400,300,700");
 @import url("http:////fonts.googleapis.com/css?family=Source+Code+Pro");
+/* 遮罩层样式 - 天蓝色背景，完全不透明 */
+#mask-layer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #87ceeb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
 * {
   box-sizing: border-box;
 }

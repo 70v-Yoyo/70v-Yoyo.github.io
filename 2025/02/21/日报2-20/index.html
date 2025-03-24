@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     
+    
     <title>日报2.20 | Yoyo&#39;s blog</title>
     
     <link rel="alternative" href="/atom.xml" title="Yoyo&#39;s blog" type="application/atom+xml">
@@ -21,6 +22,10 @@
     <![endif]-->
 <!-- hexo injector head_end start --><script src="./func.js"></script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head>
 <body class="site">
+    <!-- 遮罩层 -->
+    <div id="mask-layer">
+    </div>
+    
     <header class="site-header">
         <h1 class="site-title"><a href="/">Yoyo&#39;s blog</a></h1>
         <nav class="site-nav">
@@ -40,7 +45,7 @@
             <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><input type="hidden" name="sitesearch" value="https://70v-yoyo.github.io"></form>
         </div>
         
-            <div class="site-header-background" style="background-image:url(http://reumia.github.io/hexo-theme-zzoman2015/images/background-zzoman2015.jpg)"></div>
+            <div class="site-header-background" style="background-image:url('http://reumia.github.io/hexo-theme-zzoman2015/images/background-zzoman2015.jpg')"></div>
         
     </header>
     <div class="site-body">
@@ -191,26 +196,27 @@
                 <p><a target="_blank" href="https://github.com/70v-Yoyo">My github</a></p>
             </address>
         </div>
-    </footer>
+    </footer> 
+    
     
     <script src="/libs/jquery-1.11.3.min.js" type="text/javascript"></script>
     
     <script src="/libs/fancybox/jquery.fancybox.js" type="text/javascript"></script>
     
     <script src="/js/site_init.js" type="text/javascript"></script>
-    
-
-    <script>
-        (function() {
-            var storedPassword = localStorage.getItem("hexo_home_password");
-            if (storedPassword !== "yoyowang") {
-                var userInput = prompt("请输入密码访问本站：");
-                if (userInput === "yoyowang") {
-                    localStorage.setItem("hexo_home_password", userInput);
-                } else {
-                    document.body.innerHTML = "<h1>密码错误，请刷新重试！</h1>";
-                }
+     
+    <noscript>
+        <style>
+            article {
+                position: absolute;
+                width: 0;
+                height: 0;
+                overflow: hidden;
+                opacity: 0;
             }
-        })();
-    </script></body>
+
+        </style>
+        <h1>JS已被禁用</h1>
+    </noscript>
+</body>
 </html>
