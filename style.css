@@ -1,20 +1,3 @@
-.together {
-  width: 100%; /* 默认最小屏幕宽度 */
-}
-
-/* 平板及中等屏幕 */
-@media (min-width: 768px) {
-  .together {
-    width: 80%;
-  }
-}
-
-/* 桌面及大屏 */
-@media (min-width: 1024px) {
-  .together {
-    width: 60%;
-  }
-}
 
 .c_title{
   font-size: 2vw;
