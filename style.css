@@ -1,4 +1,6 @@
 
+
+
 .c_title{
   font-size: 2vw;
   font-weight: bold;
@@ -6,7 +8,7 @@
   .together{
     display: block;
     font-family: "微软雅黑",  sans-serif !important;
-    width:65vw;
+    width:100vw;
     text-align: center;
     box-sizing: border-box;/*盒模型*/
     height: max-content;
@@ -19,6 +21,12 @@
     padding-right: 2vw;
     padding-bottom: 1.5vw;
   }
+  /* 桌面及大屏 */
+@media (min-width: 1024px) {
+  .together {
+    width: 60%;
+  }
+}
  #header{
   width: max-content;
   margin:0.5vw auto;
