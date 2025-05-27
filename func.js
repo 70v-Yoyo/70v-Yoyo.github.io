@@ -9,6 +9,7 @@ function get_elements(){
 	console.log(together);
 
 	inline=document.createElement('div');
+	inline.id='header';
 	together.appendChild(inline);
 	
 	title=document.getElementsByClassName('c_title')[0];
@@ -181,19 +182,26 @@ function getRandomColor() {
 					container.style.left = centerX+'px';
 					container.style.top =centerY+'px';
 					firework.style.left = `0px`;
-					firework.style.top =  `0px`;
-					firework.style.width = '2px';
-					firework.style.height = '2px';
+					firework.style.top =  `0vh`;
+					firework.style.width = '0.3vw';
+					firework.style.height = '0.3vw';
+					let factor=0.5
+					if(innerWidth<700){
+						firework.style.width = '1vw';
+						firework.style.height = '1vw';
+						factor=1
+					}
+					
 					firework.style.zIndex='10';
 					firework.style.display='block';
 					console.log(Math.PI/180)
 					const angle=(Math.PI/180)*(i+1)*(360/10);
 					// 计算目标点的坐标
-					const x = Math.cos(angle) * 4;
-					const y = Math.sin(angle) * 4;
+					const x = Math.cos(angle) * factor;
+					const y = Math.sin(angle) * factor;
 					console.log(angle,x,y,centerX,centerY);
 					 // 使用 transform 来计算并设置粒子的位置
-					firework.style.transform = `translate(${x}px, ${y}px)`;
+					firework.style.transform = `translate(${x}vw, ${y}vw)`;
 					// 设置烟花的飞行方向
 					// firework.style.animationName = 'explode';
 					// firework.style.animationTimingFunction = 'ease-out';
@@ -266,8 +274,8 @@ function getRandomColor() {
 		//console.log(date,daytip,rect);
 		daytip.style.position='absolute';
 		//console.log(block,scrollX);
-		daytip.style.left=`${rect.left + scrollX}px`;
-		daytip.style.top=`${rect.top+scrollY -270}px`;
+		daytip.style.left=`${rect.left + scrollX-30}px`;
+		daytip.style.top=`${rect.top+scrollY -260}px`;
 		daytip.style.display='block';
 		
 		})
@@ -280,7 +288,7 @@ function getRandomColor() {
 
   function all(){
 	//这里插入checkedDays变量
-	checkedDays = {"2025-04-08":5,"2025-03-24":5,"2025-02-10":1,"2025-03-09":2,"2025-03-04":2,"2025-05-05":1,"2025-02-11":2,"2025-02-12":1,"2025-02-15":2,"2025-02-14":1,"2025-02-16":1,"2025-02-17":1,"2025-02-18":1,"2025-02-20":2,"2025-02-21":1,"2025-02-22":1,"2025-02-13":1,"2025-02-24":1,"2025-02-26":1,"2025-02-23":1,"2025-02-25":1,"2025-02-27":1,"2025-03-01":1,"2025-03-12":1,"2025-03-02":1,"2025-03-11":1,"2025-03-14":1,"2025-03-13":1,"2025-03-16":1,"2025-03-17":1,"2025-03-18":1,"2025-03-20":1,"2025-03-03":1,"2025-03-22":1,"2025-03-27":1,"2025-03-29":1,"2025-03-26":1,"2025-03-31":1,"2025-04-01":1,"2025-03-30":1,"2025-03-05":1,"2025-03-06":1,"2025-03-08":1,"2025-03-07":1,"2025-04-02":1,"2025-04-14":1,"2025-04-05":3,"2025-03-10":1,"2025-04-12":1,"2025-05-27":1};
+	checkedDays = {"2025-03-24":5,"2025-04-08":5,"2025-02-15":2,"2025-05-05":1,"2025-05-27":2,"2025-02-11":2,"2025-03-04":2,"2025-03-09":2,"2025-02-12":1,"2025-02-13":1,"2025-02-14":1,"2025-02-17":1,"2025-02-18":1,"2025-02-20":2,"2025-02-16":1,"2025-02-22":1,"2025-02-23":1,"2025-02-24":1,"2025-02-25":1,"2025-02-26":1,"2025-02-27":1,"2025-03-01":1,"2025-03-02":1,"2025-03-11":1,"2025-03-12":1,"2025-03-13":1,"2025-03-14":1,"2025-03-16":1,"2025-03-17":1,"2025-03-18":1,"2025-03-20":1,"2025-03-03":1,"2025-03-22":1,"2025-03-26":1,"2025-03-27":1,"2025-03-29":1,"2025-03-30":1,"2025-03-31":1,"2025-04-01":1,"2025-03-05":1,"2025-03-06":1,"2025-03-07":1,"2025-03-08":1,"2025-03-10":1,"2025-04-02":1,"2025-04-14":1,"2025-04-05":3,"2025-02-10":1,"2025-04-12":1,"2025-02-21":1};
 	currentYear=new Date().getFullYear();
 	//默认今年
 	get_elements();
