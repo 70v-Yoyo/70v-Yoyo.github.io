@@ -2,10 +2,12 @@
 function get_elements(){
 	colors=['#9BE9A8','#3FC463','#31A14E','#216E39']
 	// 获取 DOM 元素
-	p= document.getElementsByClassName('site-body')[0];//前面什么都没加const var的为全局变量
+	p= document.querySelector('body');//前面什么都没加const var的为全局变量
+	footer=document.querySelector('body footer')
 	together=document.createElement('div');
 	together.classList.add('together');
-	p.appendChild(together);
+	if(footer)p.insertBefore(together, footer);
+	else p.appendChild(together);
 	console.log(together);
 
 	inline=document.createElement('div');
@@ -135,13 +137,13 @@ function getRandomColor() {
 		  const daysInMonth = getDaysInMonth(month, year);
 		  for (let day = 1; day <= daysInMonth; day++) {
 			  const dayElement = document.createElement('div');
-			  dayElement.classList.add('grid-item');
-			  //dayElement.textContent = day;
-			  dayElement.setAttribute('block_date',`${year}-${padStart2_0(month+1)}-${padStart2_0(day)}`);
-			  monthContainer.appendChild(dayElement);
-  
 			  // 检查是否已打卡
 			  let thisday=`${year}-${padStart2_0(month+1)}-${padStart2_0(day)}`;
+			  dayElement.classList.add('grid-item');
+			  //dayElement.textContent = day;
+			  dayElement.setAttribute('block_date',`${thisday} : ${checkedDays[thisday]?? 'no'} ${checkedDays[thisday]===1?'post':'posts'}`);
+			  monthContainer.appendChild(dayElement);
+  
 			  if (thisday in checkedDays) {
 				  dayElement.classList.add('checked');
 				  switch (checkedDays[thisday]){
@@ -176,7 +178,7 @@ function getRandomColor() {
 					firework.style.backgroundColor = color;
 					firework.style.position = 'absolute';
 					const centerX=`${rect.left + scrollX}`;
-					const centerY=`${rect.top+ scrollY-210}`; //rect.top+ scrollY才是元素的绝对位置 相对于整个网页的坐标
+					const centerY=`${rect.top+ scrollY-10}`; //rect.top+ scrollY才是元素的绝对位置 相对于整个网页的坐标
 					console.log(rect.top,centerY)
 					// 设置烟花的初始位置为点击位置
 					container.style.left = centerX+'px';
@@ -275,7 +277,7 @@ function getRandomColor() {
 		daytip.style.position='absolute';
 		//console.log(block,scrollX);
 		daytip.style.left=`${rect.left + scrollX-30}px`;
-		daytip.style.top=`${rect.top+scrollY -260}px`;
+		daytip.style.top=`${rect.top+scrollY -60}px`;
 		daytip.style.display='block';
 		
 		})
@@ -288,7 +290,7 @@ function getRandomColor() {
 
   function all(){
 	//这里插入checkedDays变量
-	checkedDays = {"2025-03-24":5,"2025-04-08":5,"2025-05-29":1,"2025-02-10":1,"2025-02-15":2,"2025-03-09":2,"2025-05-05":1,"2025-05-27":2,"2025-05-28":1,"2025-03-04":2,"2025-02-11":2,"2025-02-12":1,"2025-02-13":1,"2025-02-14":1,"2025-02-16":1,"2025-02-17":1,"2025-02-18":1,"2025-02-20":2,"2025-02-21":1,"2025-02-22":1,"2025-02-23":1,"2025-02-24":1,"2025-02-25":1,"2025-02-26":1,"2025-02-27":1,"2025-03-01":1,"2025-03-02":1,"2025-03-11":1,"2025-03-12":1,"2025-03-13":1,"2025-03-16":1,"2025-03-14":1,"2025-03-17":1,"2025-03-18":1,"2025-03-20":1,"2025-03-03":1,"2025-03-22":1,"2025-03-26":1,"2025-03-27":1,"2025-03-29":1,"2025-03-30":1,"2025-03-31":1,"2025-04-01":1,"2025-03-05":1,"2025-03-06":1,"2025-03-07":1,"2025-03-08":1,"2025-03-10":1,"2025-04-02":1,"2025-04-14":1,"2025-04-05":3,"2025-04-12":1};
+	checkedDays = {"2025-03-24":5,"2025-04-08":5,"2025-03-09":2,"2025-05-05":1,"2025-05-27":2,"2025-05-28":1,"2025-02-10":1,"2025-02-15":2,"2025-03-04":2,"2025-05-29":1,"2025-02-11":2,"2025-02-13":1,"2025-02-14":1,"2025-02-12":1,"2025-02-20":2,"2025-02-16":1,"2025-02-18":1,"2025-02-17":1,"2025-02-23":1,"2025-02-21":1,"2025-02-22":1,"2025-02-25":1,"2025-03-01":1,"2025-02-24":1,"2025-03-11":1,"2025-03-12":1,"2025-02-27":1,"2025-02-26":1,"2025-03-02":1,"2025-03-13":1,"2025-03-18":1,"2025-03-20":1,"2025-03-17":1,"2025-03-14":1,"2025-03-16":1,"2025-03-03":1,"2025-03-22":1,"2025-03-29":1,"2025-03-26":1,"2025-03-30":1,"2025-04-01":1,"2025-03-31":1,"2025-03-05":1,"2025-03-06":1,"2025-03-07":1,"2025-03-08":1,"2025-03-10":1,"2025-04-02":1,"2025-04-14":1,"2025-04-05":3,"2025-04-12":1,"2025-03-27":1};
 	currentYear=new Date().getFullYear();
 	//默认今年
 	get_elements();
