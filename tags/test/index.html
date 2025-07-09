@@ -116,6 +116,10 @@
       <ul>
         
           <li>
+            <a href="/2025/07/09/JS%E6%B7%B1%E5%85%A5%E5%AD%A6%E4%B9%A0/">JS一本通</a>
+          </li>
+        
+          <li>
             <a href="/2025/07/07/%E5%89%8D%E7%AB%AF%E5%BF%85%E4%BC%9A%E5%85%B3%E9%94%AE%E8%AF%8D/">FE必会关键词</a>
           </li>
         
@@ -129,10 +133,6 @@
         
           <li>
             <a href="/2025/05/27/tags%E6%B1%87%E6%80%BB/">tags汇总</a>
-          </li>
-        
-          <li>
-            <a href="/2025/05/27/%E7%AE%97%E6%B3%95%E5%BF%85%E5%88%B7/">算法必刷</a>
           </li>
         
       </ul>
@@ -215,7 +215,7 @@
       top: 0vh;
       left: 0px;
       width: 15rem;
-      max-height: 95vh;
+      max-height: 80vh;
       overflow-y: auto;
       overflow-x: auto;
       padding: 10px;
@@ -251,6 +251,7 @@
           const toc = document.querySelector('#fixed-toc-container');
           if (toc) {
             toc.style.top = navBottom + 'px';
+            toc.style.maxHeight=window.innerHeight - navBottom.getBoundingClientRect().bottom;
           }
         }
       });
