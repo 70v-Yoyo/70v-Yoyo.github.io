@@ -1,0 +1,688 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    
+    
+    <title>微信小程序 | Yoyo&#39;s blog</title>
+    
+    <link rel="alternative" href="/atom.xml" title="Yoyo&#39;s blog" type="application/atom+xml">
+    
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+    <link rel="stylesheet" href="/libs/fancybox/jquery.fancybox.css" charset="utf-8">
+    
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+<!-- hexo injector head_end start --><script src="./func.js"></script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head>
+<body class="site">
+    <!-- 遮罩层 -->
+    <div id="mask-layer">
+    </div>
+    
+    <header class="site-header">
+        <h1 class="site-title"><a href="/">Yoyo&#39;s blog</a></h1>
+        <nav class="site-nav">
+            <ul class="nav">
+                
+                <li><a href="/">Home</a></li>
+                
+                <li><a href="/archives">Archives</a></li>
+                
+                
+                <li><a href="/atom.xml" title="RSS Feed">rss</a></li>
+                
+                <li><a class="toggle-search" href="#search">search</a></li>
+            </ul>
+        </nav>
+        <div class="site-search" id="search">
+            <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><input type="hidden" name="sitesearch" value="https://70v-yoyo.github.io"></form>
+        </div>
+        
+            <div class="site-header-background" style="background-image:url('http://reumia.github.io/hexo-theme-zzoman2015/images/background-zzoman2015.jpg')"></div>
+        
+    </header>
+    <div class="site-body">
+        <div class="global-width">
+    <article class="article" data-layout="post" data-slug="微信小程序">
+        <div class="article-content">
+            
+            
+            <header class="article-header">
+                <div class="article-meta">
+                    <a href="/2025/07/21/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/" class="article-date">
+  <time datetime="2025-07-21T12:04:34.000Z">2025-07-21</time>
+</a>
+                    
+                    
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/frontend/" rel="tag">frontend</a></li></ul>
+
+                </div>
+                
+    <h1 class="article-title" itemprop="name">
+      <a href="/2025/07/21/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/">微信小程序</a>
+    </h1>
+
+            </header>
+            
+            <div class="article-body">
+                <meta name="referrer" content="no-referrer" />
+
+<blockquote>
+<p>版本：20250721</p>
+</blockquote>
+<h1 id="原生"><a href="#原生" class="headerlink" title="原生"></a>原生</h1><p>微信小程序的写法“长得像 Vue”，但底层机制更偏原生，功能更加受限。</p>
+<ul>
+<li><strong>相似之处</strong></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>特性</th>
+<th>微信小程序</th>
+<th>Vue</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>组件结构</td>
+<td>使用 <code>.wxml</code>, <code>.wxss</code>, <code>.js</code>, <code>.json</code></td>
+<td>使用单文件组件 <code>.vue</code>（template、script、style）</td>
+</tr>
+<tr>
+<td>响应式数据</td>
+<td><code>this.setData()</code> 更新视图</td>
+<td>数据自动绑定，视图自动更新</td>
+</tr>
+<tr>
+<td>生命周期</td>
+<td>如 <code>onLoad</code>、<code>onShow</code></td>
+<td>如 <code>created</code>、<code>mounted</code></td>
+</tr>
+<tr>
+<td>事件绑定</td>
+<td><code>bindtap=&quot;&#123;&#123;fn&#125;&#125;&quot;</code></td>
+<td><code>@click=&quot;fn&quot;</code></td>
+</tr>
+<tr>
+<td>条件渲染</td>
+<td><code>wx:if</code> &#x2F; <code>wx:for</code></td>
+<td><code>v-if</code> &#x2F; <code>v-for</code></td>
+</tr>
+<tr>
+<td>组件通信</td>
+<td>自定义事件 + <code>triggerEvent</code></td>
+<td><code>props</code> 和 <code>$emit</code></td>
+</tr>
+</tbody></table>
+<ul>
+<li><strong>不同之处</strong></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>对比维度</th>
+<th>微信小程序</th>
+<th>Vue</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>数据更新</td>
+<td>手动调用 <code>this.setData()</code></td>
+<td>自动响应式更新</td>
+</tr>
+<tr>
+<td>模板语言</td>
+<td>WXML（微信专用语法）</td>
+<td>HTML 基础扩展</td>
+</tr>
+<tr>
+<td>样式单位</td>
+<td>使用 <code>rpx</code> 响应式单位</td>
+<td>使用标准 CSS 单位（px, rem 等）</td>
+</tr>
+<tr>
+<td>状态管理</td>
+<td>没有默认方案（可选用 Vuex 模拟）</td>
+<td>推荐使用 Vuex、Pinia</td>
+</tr>
+<tr>
+<td>DOM 控制</td>
+<td>封装在框架内，无法直接操作 DOM</td>
+<td>可访问虚拟 DOM，灵活控制</td>
+</tr>
+</tbody></table>
+<ul>
+<li><p>项目结构与文件作用</p>
+</li>
+<li><p><code>app.js</code>：全局逻辑处理，如生命周期、全局变量</p>
+</li>
+<li><p><code>app.json</code>：全局配置，如页面路径、tabBar、窗口样式</p>
+</li>
+<li><p><code>app.wxss</code>：全局样式</p>
+</li>
+<li><p>页面文件结构：每个页面由 <code>.js</code>、<code>.json</code>、<code>.wxml</code>、<code>.wxss</code> 组成</p>
+</li>
+<li><p>project.config.json配置小程序信息</p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>配置项</th>
+<th>说明</th>
+<th>设置位置</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>AppID</code></td>
+<td>小程序唯一标识</td>
+<td>微信公众平台</td>
+</tr>
+<tr>
+<td><code>AppSecret</code></td>
+<td>小程序密钥</td>
+<td>微信公众平台</td>
+</tr>
+<tr>
+<td><code>libVersion</code></td>
+<td>基础库版本</td>
+<td>微信开发者工具</td>
+</tr>
+<tr>
+<td><code>app.json</code></td>
+<td>小程序全局配置，如页面路径、窗口样式、tabBar 等</td>
+<td>项目根目录</td>
+</tr>
+<tr>
+<td><code>sitemap.json</code></td>
+<td>控制页面是否允许被微信索引</td>
+<td>项目根目录</td>
+</tr>
+<tr>
+<td><code>manifest.json</code>（uniapp）</td>
+<td>多平台配置文件，包含 AppID、名称、图标等</td>
+<td>uniapp 项目中</td>
+</tr>
+</tbody></table>
+<ul>
+<li><p>生命周期函数</p>
+<ul>
+<li>页面级：<code>onLoad</code>、<code>onShow</code>、<code>onReady</code>、<code>onHide</code>、<code>onUnload</code></li>
+<li>组件级：<code>attached</code>、<code>detached</code>、<code>moved</code></li>
+<li>应用级：<code>onLaunch</code>、<code>onShow</code>、<code>onHide</code></li>
+</ul>
+</li>
+<li><p>页面通信与数据传递</p>
+<ul>
+<li>URL 参数传递</li>
+<li>全局变量（<code>App()</code> 中的 <code>globalData</code>）</li>
+<li>本地缓存（<code>wx.setStorageSync</code> &#x2F; <code>wx.getStorageSync</code>）</li>
+<li>事件传参（<code>data-*</code> 属性 + <code>e.currentTarget.dataset</code>）</li>
+</ul>
+</li>
+<li><p>网络请求封装</p>
+<ul>
+<li>使用 <code>wx.request</code> 封装 GET &#x2F; POST 方法</li>
+<li>添加 token、异常处理、loading 状态</li>
+<li>可抽象为 <code>api.js</code> 模块统一管理接口</li>
+</ul>
+</li>
+<li><p>微信支付与授权</p>
+<ul>
+<li>授权登录流程：<code>wx.login</code> → 后端换取 <code>openid</code> &#x2F; <code>session_key</code></li>
+<li>支付流程：调用 <code>wx.requestPayment</code>，需配置商户号和合法域名</li>
+</ul>
+</li>
+</ul>
+<h2 id="高频面试题"><a href="#高频面试题" class="headerlink" title="高频面试题"></a>高频面试题</h2><h3 id="小程序性能优化"><a href="#小程序性能优化" class="headerlink" title="小程序性能优化"></a>小程序性能优化</h3><ul>
+<li>总结：</li>
+</ul>
+<p>控制 setData 的频率和字段</p>
+<p>合理使用分包加载和懒加载</p>
+<p>使用骨架屏优化冷启动体验</p>
+<p>避免长列表一次性加载</p>
+<p>合理缓存数据（Storage + 缓存策略）</p>
+<p>合理组件拆分，避免嵌套过深</p>
+<p>合理事件绑定，减少 DOM 节点生成</p>
+<p>减少体积：使用字体图标 &#x2F; CDN 图片，分包，代码静态依赖分析去除无用文件，按需加载，压缩</p>
+<ol>
+<li><strong>通信机制特殊：setData 性能瓶颈</strong></li>
+</ol>
+<ul>
+<li>小程序中视图和逻辑是分离的，<code>Page</code> 的逻辑层和视图层通过 <code>setData()</code> 通信。</li>
+<li><strong>这是性能瓶颈之一</strong>，频繁、大量调用 <code>setData</code> 会造成卡顿。</li>
+</ul>
+<p><strong>优化建议：</strong></p>
+<ul>
+<li>尽量只更新变化的数据字段；</li>
+<li>减少 <code>setData</code> 的调用频率；</li>
+<li>使用节流&#x2F;防抖；</li>
+<li>可以使用第三方状态管理方案（如 MobX、Vuex、Rematch）避免 setData 冗余。</li>
+</ul>
+<ol start="2">
+<li><strong>页面层级和组件嵌套有限制</strong></li>
+</ol>
+<ul>
+<li>小程序页面最多只能存在<strong>10个层级页面</strong>；</li>
+<li>组件嵌套建议不要太深（3 层以上会明显影响性能）。</li>
+</ul>
+<p><strong>优化建议：</strong></p>
+<ul>
+<li>避免组件滥用嵌套；</li>
+<li>合理拆分组件，提高复用性但保持扁平。</li>
+</ul>
+<ol start="3">
+<li><strong>资源体积限制</strong></li>
+</ol>
+<ul>
+<li>单个小程序包大小不能超过 <strong>2MB（主包）+ 2MB（子包）</strong>。</li>
+</ul>
+<p><strong>优化建议：</strong></p>
+<ul>
+<li>使用分包加载（小程序原生支持）；</li>
+<li>不要滥用图片（采用云存储 + URL 引用）；</li>
+<li>使用 SVG&#x2F;字体图标代替位图；</li>
+<li>清理无用资源。</li>
+</ul>
+<ol start="4">
+<li><strong>渲染性能优化点不同于浏览器</strong></li>
+</ol>
+<ul>
+<li>小程序渲染是通过 WXML + WXSS 解析，不能像 DOM 那样灵活优化；</li>
+<li>没有虚拟 DOM 的 diff 算法；</li>
+<li><strong>列表性能（如 scroll-view、swiper）尤其容易出问题</strong>。</li>
+</ul>
+<p><strong>优化建议：</strong></p>
+<ul>
+<li>使用 <code>block</code> 包裹循环元素避免重复渲染；</li>
+<li>使用 <code>wx:key</code> 指定 key，提高 diff 效率；</li>
+<li>长列表使用分页、懒加载、虚拟列表等方式；</li>
+<li>swiper 滑块（轮播图、滑动分栏）不要一次渲染 10 个，按需加载。</li>
+</ul>
+<ol start="5">
+<li><strong>原生事件绑定成本较高</strong></li>
+</ol>
+<ul>
+<li><code>bindtap</code> &#x2F; <code>catchtap</code> 每个都会在 WXML 和 JS 中建立绑定关系。</li>
+</ul>
+<p><strong>优化建议：</strong></p>
+<ul>
+<li>避免无意义的事件绑定；不支持事件委托</li>
+<li>重复组件提取公共组件复用事件。</li>
+</ul>
+<ol start="6">
+<li><strong>没有浏览器缓存机制</strong></li>
+</ol>
+<ul>
+<li>Web 页面可以通过 HTTP 缓存提升访问速度；</li>
+<li>小程序资源缓存由平台决定，开发者不可控。</li>
+</ul>
+<p><strong>优化建议：</strong></p>
+<ul>
+<li>自己实现缓存策略（本地缓存、LRU缓存）；</li>
+<li>使用缓存 API 如 <code>wx.setStorageSync()</code>&#x2F;<code>wx.getStorageSync()</code>；</li>
+<li>请求数据时主动判断是否更新。</li>
+</ul>
+<ol start="7">
+<li><strong>小程序特有 API 调用耗性能</strong></li>
+</ol>
+<ul>
+<li>如频繁调用 <code>wx.getSystemInfoSync()</code>、<code>wx.getLocation()</code>、<code>wx.createSelectorQuery()</code> 都比较重。</li>
+</ul>
+<p><strong>优化建议：</strong></p>
+<ul>
+<li>缓存系统信息、位置信息；</li>
+<li>少用同步 API；</li>
+<li>页面生命周期内复用 SelectorQuery。</li>
+</ul>
+<ol start="8">
+<li><strong>数据监听机制不自动触发更新</strong></li>
+</ol>
+<ul>
+<li>不是响应式系统，必须手动 <code>setData</code>；</li>
+<li>需要自己管理状态与视图更新。</li>
+</ul>
+<p><strong>优化建议：</strong></p>
+<ul>
+<li>借助响应式库（如 MobX、Vue3 响应式核心）；</li>
+<li>利用微信的 <code>Observer</code> 模型、组合式组件（if using原生组件库 like WeUI）</li>
+</ul>
+<ol start="9">
+<li><strong>网络请求并发有限制</strong></li>
+</ol>
+<ul>
+<li>同时最多 10 个网络请求；</li>
+<li>请求失败率比网页环境高（因为网络、封装限制）。</li>
+</ul>
+<p><strong>优化建议：</strong></p>
+<ul>
+<li>请求合并（接口聚合）；</li>
+<li>重试机制；</li>
+<li>后端分页、数据懒加载。</li>
+</ul>
+<ol start="10">
+<li><strong>启动速度优化有额外步骤</strong></li>
+</ol>
+<ul>
+<li>用户首次打开小程序的“冷启动”体验尤为重要。</li>
+</ul>
+<p><strong>优化建议：</strong></p>
+<ul>
+<li>使用分包 + 首屏包机制；</li>
+<li>在首页中只加载最关键 UI；</li>
+<li>使用骨架屏&#x2F;Loading 占位；</li>
+<li>首页数据放入 <code>App.onLaunch()</code> 提前加载。</li>
+</ul>
+<h3 id="微信小程序的懒加载"><a href="#微信小程序的懒加载" class="headerlink" title="微信小程序的懒加载"></a>微信小程序的懒加载</h3><ul>
+<li><p>组件按需渲染</p>
+<p>适用于页面中多个模块或组件，避免一次性渲染全部。</p>
+<ul>
+<li>使用 <code>wx:if</code> 控制组件是否渲染</li>
+<li>结合 <code>IntersectionObserver</code> 判断是否进入视口</li>
+</ul>
+</li>
+<li><p>图片：lazy-load属性或者 <code>IntersectionObserver</code></p>
+</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;image src=<span class="string">&quot;&#123;&#123;imgUrl&#125;&#125;&quot;</span> lazy-load=<span class="string">&quot;true&quot;</span> /&gt;</span><br><span class="line"></span><br><span class="line"><span class="title class_">Page</span>(&#123;</span><br><span class="line">  <span class="title function_">onReady</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">const</span> observer = wx.<span class="title function_">createIntersectionObserver</span>(<span class="variable language_">this</span>);</span><br><span class="line">    observer.<span class="title function_">relativeToViewport</span>().<span class="title function_">observe</span>(<span class="string">&#x27;.lazy-img&#x27;</span>, <span class="function"><span class="params">res</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">if</span> (res.<span class="property">intersectionRatio</span> &gt; <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="variable language_">this</span>.<span class="title function_">setData</span>(&#123; <span class="attr">showImage</span>: <span class="literal">true</span> &#125;);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">image</span> <span class="attr">class</span>=<span class="string">&quot;lazy-img&quot;</span> <span class="attr">src</span>=<span class="string">&quot;&#123;&#123;showImage ? realSrc : defaultSrc&#125;&#125;&quot;</span> /&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>长列表</li>
+</ul>
+<ol>
+<li>在页面配置中开启滚动监听</li>
+</ol>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;enablePullDownRefresh&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;onReachBottomDistance&quot;</span><span class="punctuation">:</span> <span class="number">50</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>页面逻辑中监听 <code>onReachBottom</code>：</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="title class_">Page</span>(&#123;</span><br><span class="line">  <span class="attr">data</span>: &#123;</span><br><span class="line">    <span class="attr">list</span>: [],</span><br><span class="line">    <span class="attr">page</span>: <span class="number">1</span>,</span><br><span class="line">    <span class="attr">hasMore</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="attr">loading</span>: <span class="literal">false</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="title function_">onReachBottom</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">if</span> (!<span class="variable language_">this</span>.<span class="property">data</span>.<span class="property">hasMore</span> || <span class="variable language_">this</span>.<span class="property">data</span>.<span class="property">loading</span>) <span class="keyword">return</span>;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="title function_">loadMore</span>();</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="title function_">loadMore</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="title function_">setData</span>(&#123; <span class="attr">loading</span>: <span class="literal">true</span> &#125;);</span><br><span class="line">    <span class="comment">// 模拟请求</span></span><br><span class="line">    wx.<span class="title function_">request</span>(&#123;</span><br><span class="line">      <span class="attr">url</span>: <span class="string">`https://api.example.com/list?page=<span class="subst">$&#123;<span class="variable language_">this</span>.data.page&#125;</span>`</span>,</span><br><span class="line">      <span class="attr">success</span>: <span class="function"><span class="params">res</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">const</span> newList = res.<span class="property">data</span>;</span><br><span class="line">        <span class="variable language_">this</span>.<span class="title function_">setData</span>(&#123;</span><br><span class="line">          <span class="attr">list</span>: [...<span class="variable language_">this</span>.<span class="property">data</span>.<span class="property">list</span>, ...newList],</span><br><span class="line">          <span class="attr">page</span>: <span class="variable language_">this</span>.<span class="property">data</span>.<span class="property">page</span> + <span class="number">1</span>,</span><br><span class="line">          <span class="attr">hasMore</span>: newList.<span class="property">length</span> &gt; <span class="number">0</span>,</span><br><span class="line">          <span class="attr">loading</span>: <span class="literal">false</span></span><br><span class="line">        &#125;);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h3 id="小程序和-H5-的区别？运行环境、权限、性能"><a href="#小程序和-H5-的区别？运行环境、权限、性能" class="headerlink" title="小程序和 H5 的区别？	运行环境、权限、性能"></a>小程序和 H5 的区别？	运行环境、权限、性能</h3><h3 id="如何实现双向绑定？this-setData-与-Vue-的对比"><a href="#如何实现双向绑定？this-setData-与-Vue-的对比" class="headerlink" title="如何实现双向绑定？	this.setData() 与 Vue 的对比"></a>如何实现双向绑定？	this.setData() 与 Vue 的对比</h3><h3 id="小程序如何封装请求？模块化、异常处理"><a href="#小程序如何封装请求？模块化、异常处理" class="headerlink" title="小程序如何封装请求？	模块化、异常处理"></a>小程序如何封装请求？	模块化、异常处理</h3><p>是否抽象出统一的 api.js，是否处理 token、异常、loading 等</p>
+<h3 id="生命周期有哪些？页面、组件、应用级"><a href="#生命周期有哪些？页面、组件、应用级" class="headerlink" title="生命周期有哪些？	页面、组件、应用级"></a>生命周期有哪些？	页面、组件、应用级</h3><h3 id="如何实现下拉刷新？enablePullDownRefresh-onPullDownRefresh"><a href="#如何实现下拉刷新？enablePullDownRefresh-onPullDownRefresh" class="headerlink" title="如何实现下拉刷新？	enablePullDownRefresh + onPullDownRefresh"></a>如何实现下拉刷新？	enablePullDownRefresh + onPullDownRefresh</h3><h3 id="bindtap-和-catchtap-区别？是否阻止事件冒泡"><a href="#bindtap-和-catchtap-区别？是否阻止事件冒泡" class="headerlink" title="bindtap 和 catchtap 区别？	是否阻止事件冒泡"></a>bindtap 和 catchtap 区别？	是否阻止事件冒泡</h3><h3 id="项目中用到了哪些小程序能力？API-使用、组件封装、页面跳转、授权登录等"><a href="#项目中用到了哪些小程序能力？API-使用、组件封装、页面跳转、授权登录等" class="headerlink" title="项目中用到了哪些小程序能力？	API 使用、组件封装、页面跳转、授权登录等"></a>项目中用到了哪些小程序能力？	API 使用、组件封装、页面跳转、授权登录等</h3><h3 id="页面间如何传值？URL-参数、缓存、全局变量、事件通信等"><a href="#页面间如何传值？URL-参数、缓存、全局变量、事件通信等" class="headerlink" title="页面间如何传值？	URL 参数、缓存、全局变量、事件通信等"></a>页面间如何传值？	URL 参数、缓存、全局变量、事件通信等</h3><h3 id="遇到过哪些坑？怎么解决的？真机调试差异、异步请求顺序、授权失败等"><a href="#遇到过哪些坑？怎么解决的？真机调试差异、异步请求顺序、授权失败等" class="headerlink" title="遇到过哪些坑？怎么解决的？	真机调试差异、异步请求顺序、授权失败等"></a>遇到过哪些坑？怎么解决的？	真机调试差异、异步请求顺序、授权失败等</h3><h3 id="如何处理-token-过期？拦截器统一处理、跳转登录页、刷新-token-流程"><a href="#如何处理-token-过期？拦截器统一处理、跳转登录页、刷新-token-流程" class="headerlink" title="如何处理 token 过期？	拦截器统一处理、跳转登录页、刷新 token 流程"></a>如何处理 token 过期？	拦截器统一处理、跳转登录页、刷新 token 流程</h3><h3 id="微信支付流程你怎么做的？后端生成-prepay-id，前端调用-wx-requestPayment"><a href="#微信支付流程你怎么做的？后端生成-prepay-id，前端调用-wx-requestPayment" class="headerlink" title="微信支付流程你怎么做的？	后端生成 prepay_id，前端调用 wx.requestPayment"></a>微信支付流程你怎么做的？	后端生成 prepay_id，前端调用 wx.requestPayment</h3><h3 id="小程序如何实现权限控制？登录态校验、接口鉴权、页面跳转控制"><a href="#小程序如何实现权限控制？登录态校验、接口鉴权、页面跳转控制" class="headerlink" title="小程序如何实现权限控制？	登录态校验、接口鉴权、页面跳转控制"></a>小程序如何实现权限控制？	登录态校验、接口鉴权、页面跳转控制</h3><h3 id="为什么选择原生开发而不是-uniapp？"><a href="#为什么选择原生开发而不是-uniapp？" class="headerlink" title="为什么选择原生开发而不是 uniapp？"></a>为什么选择原生开发而不是 uniapp？</h3><h3 id="小程序中如何实现组件通信？（triggerEvent-props）"><a href="#小程序中如何实现组件通信？（triggerEvent-props）" class="headerlink" title="小程序中如何实现组件通信？（triggerEvent &#x2F; props）"></a>小程序中如何实现组件通信？（triggerEvent &#x2F; props）</h3><h3 id="如何处理异步请求的顺序问题？（Promise-async-await）"><a href="#如何处理异步请求的顺序问题？（Promise-async-await）" class="headerlink" title="如何处理异步请求的顺序问题？（Promise &#x2F; async&#x2F;await）"></a>如何处理异步请求的顺序问题？（Promise &#x2F; async&#x2F;await）</h3><h3 id="如何做多环境配置？（开发-生产环境的接口切换）"><a href="#如何做多环境配置？（开发-生产环境的接口切换）" class="headerlink" title="如何做多环境配置？（开发 &#x2F; 生产环境的接口切换）"></a>如何做多环境配置？（开发 &#x2F; 生产环境的接口切换）</h3><h3 id="如何做埋点或日志记录？"><a href="#如何做埋点或日志记录？" class="headerlink" title="如何做埋点或日志记录？"></a>如何做埋点或日志记录？</h3><h3 id="有没有做过小程序云开发？用到了哪些能力？"><a href="#有没有做过小程序云开发？用到了哪些能力？" class="headerlink" title="有没有做过小程序云开发？用到了哪些能力？"></a>有没有做过小程序云开发？用到了哪些能力？</h3><h2 id="从小程序跳转到公众号"><a href="#从小程序跳转到公众号" class="headerlink" title="从小程序跳转到公众号"></a>从小程序跳转到公众号</h2><h1 id="uni-app"><a href="#uni-app" class="headerlink" title="uni-app"></a>uni-app</h1>
+            </div>
+        </div>
+    </article>
+
+    
+    
+<nav class="article-nav">
+  
+  
+    <a href="/2025/07/20/%E6%87%92%E5%8A%A0%E8%BD%BD%E9%A2%84%E5%8A%A0%E8%BD%BD/" id="article-nav-older" class="article-nav-link-wrap next">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">懒加载预加载</div>
+    </a>
+  
+</nav>
+
+    
+
+    
+</div>
+    </div>
+    <footer class="site-footer">
+        <div class="global-width">
+            <ul class="site-widget">
+                
+                <li class="widget widget-tag">
+                    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget-body">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/English/" rel="tag">English</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/basics/" rel="tag">basics</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/frontend/" rel="tag">frontend</a><span class="tag-list-count">17</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/projects/" rel="tag">projects</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tags/" rel="tag">tags</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/test/" rel="tag">test</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+                </li>
+                
+                <li class="widget widget-category">
+                    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget-body">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/daily-report/">daily_report</a><span class="category-list-count">52</span></li></ul>
+    </div>
+  </div>
+
+                </li>
+                
+                <li class="widget widget-recent_posts">
+                    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget-body">
+      <ul>
+        
+          <li>
+            <a href="/2025/07/21/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/">微信小程序</a>
+          </li>
+        
+          <li>
+            <a href="/2025/07/20/%E6%87%92%E5%8A%A0%E8%BD%BD%E9%A2%84%E5%8A%A0%E8%BD%BD/">懒加载预加载</a>
+          </li>
+        
+          <li>
+            <a href="/2025/07/20/PWA/">PWA</a>
+          </li>
+        
+          <li>
+            <a href="/2025/07/16/nodejs%E6%A8%A1%E5%9D%97%E5%A4%A7%E5%85%A8/">nodejs模块大全</a>
+          </li>
+        
+          <li>
+            <a href="/2025/07/15/nodejs%E4%B8%80%E6%9C%AC%E9%80%9A/">nodejs一本通</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+                </li>
+                
+            </ul>
+        </div>
+        <div class="site-info">
+            <address>
+                &copy; 2014 <a href="https://70v-yoyo.github.io">Yoyo&#39;s blog</a> All Right Reserved. <br/>
+                Powered by <a target="_blank" rel="noopener" href="http://hexo.io">Hexo</a>. Theme by <a target="_blank" rel="noopener" href="http://zzoman.com">ZZOMAN</a>
+                <p><a target="_blank" href="https://github.com/70v-Yoyo">My github</a></p>
+            </address>
+        </div>
+    </footer> 
+    
+    
+    <script src="/libs/jquery-1.11.3.min.js" type="text/javascript"></script>
+    
+    <script src="/libs/fancybox/jquery.fancybox.js" type="text/javascript"></script>
+    
+    <script src="/js/site_init.js" type="text/javascript"></script>
+     
+    <noscript>
+        <style>
+            article {
+                position: absolute;
+                width: 0;
+                height: 0;
+                overflow: hidden;
+                opacity: 0;
+            }
+
+        </style>
+        <h1>JS已被禁用</h1>
+    </noscript>
+<!-- hexo injector body_end start -->
+    <script>
+      (function() {
+        function moveElementIfSmallScreen() {
+          const toc = document.getElementById('fixed-toc-container');
+          const article = document.querySelector("article");
+          const toggleBtn = document.getElementById('toggle_btn');
+          if (!toc || !article) return;
+          if (window.innerWidth < 1024 && article.firstElementChild !== toc) {
+            console.log('small screen!!')
+            
+            article.insertBefore(toc, article.firstChild);//移动节点，而非复制
+            
+            toggleBtn.style.display='none';
+            // 替换样式：取消 fixed，设置适合正文的样式
+            toc.style.position = 'relative';
+            toc.style.top = '';
+            toc.style.left = '';
+            toc.style.width = '100%';
+            toc.style.maxHeight = 'none';
+            toc.style.overflowY = 'visible';
+            toc.style.overflowX = 'visible';
+            toc.style.padding = '1em';
+            toc.style.borderLeft = 'none';
+            toc.style.borderBottom = '1px solid #ddd';
+            toc.style.background = '#f9f9f9';
+            toc.style.opacity = '1';
+            toc.style.zIndex = '9999';
+            toc.style.boxShadow = 'none';
+            toc.style.margin = '1rem';
+            toc.style.paddingTop= '2rem';
+          }
+        }
+        window.addEventListener("DOMContentLoaded", moveElementIfSmallScreen);
+        window.addEventListener("resize", moveElementIfSmallScreen);
+      })();
+    </script>
+  <!-- hexo injector body_end end -->
+    <div id="fixed-toc-container" style="
+      position: fixed;
+      top: 0vh;
+      left: 0px;
+      width: 15rem;
+      max-height: 80vh;
+      overflow-y: auto;
+      overflow-x: auto;
+      padding: 10px;
+      border-left: 2px solid #ccc;
+      font-size: 14px;
+      line-height: 1.5;
+      background: #fff;
+      opacity:0.8;
+      z-index: 9999;
+      box-shadow:
+        0 2px 4px rgba(0, 0, 0, 0.05),  /* 第一层：近处柔和 */
+        0 8px 16px rgba(0, 0, 0, 0.08); /* 第二层：远处扩散 */
+    ">
+      <strong>Contents</strong>
+      <div id="toggle_btn" style="
+      position:absolute;
+      right:1rem;
+      display:inline-block;
+      width:2rem;
+      text-align:center;
+      border:1px solid #ccc;
+      "><</div>
+      <ul id="fixed-toc-list" style="list-style: none; padding-left: 10px;"></ul>
+    </div>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const nav = document.querySelector('nav');
+        if (nav) {
+          const navBottom = nav.getBoundingClientRect().bottom;//浏览器JS API
+          console.log('nav bottom:', navBottom);
+          // 设置toc元素 top = nav bottom
+          const toc = document.querySelector('#fixed-toc-container');
+          if (toc) {
+            toc.style.top = navBottom + 'px';
+            toc.style.maxHeight=window.innerHeight - navBottom.getBoundingClientRect().bottom;
+          }
+        }
+      });
+
+      const myDiv = document.getElementById('toggle_btn');
+      var tocList=document.getElementById("fixed-toc-list");
+      var tocContainer=document.getElementById("fixed-toc-container");
+      function handleClickBtn() {
+        console.log('Div 被点击了！');
+        if(myDiv.textContent==='<'){
+          myDiv.textContent ='>'
+          tocList.style.display='none'
+          tocContainer.style.width='11rem'
+        }else{
+          myDiv.textContent ='<'
+          tocList.style.display='block'
+          tocContainer.style.width='15rem'
+        }
+          
+      }
+
+
+      myDiv.addEventListener('click', handleClickBtn);// 绑定点击事件
+
+
+      (function() {
+      const Patternstr = "/*\\d{4}/\\d{2}/\\d{2}/.*"; //本身是字符串插入，所以对符号要转义
+      //"^//*"->"/"
+      //"/.*"->".*"
+      //JS引擎中""转义
+      //正则表达式引擎也是""转义
+      const dataPattern = new RegExp(Patternstr);
+      const path = window.location.pathname;
+      console.log(dataPattern.toString(),path,dataPattern.test(path));//控制台在渲染时省略了反斜杠的可视表示。
+      if (!dataPattern.test(path)&&(path==='/'||path==='index.html')) {
+        console.log('no toc')
+        let toc = document.getElementById('fixed-toc-container');
+        if (toc) toc.style.display = 'none';
+        return;
+      }
+        var content = document.querySelector('body');
+        console.log('content',content)
+        //var tocList = document.getElementById('fixed-toc-list');
+        if (!content || !tocList) {
+          document.getElementById('fixed-toc-container').style.display = 'none';
+          return;
+        }
+        var headings = content.querySelectorAll('h1, h2, h3, h4');
+        console.log('headings',headings)
+        if(headings){
+          const h1Element=headings[0];
+          const rect = h1Element.getBoundingClientRect();
+          if(rect.left<150){
+           tocContainer.style.right='0px';
+           tocContainer.style.left = 'auto'; // 移除内联的 left 样式
+            //不是设置right:0 就替换left:0 需要移除
+            console.log('to right')
+          }
+          console.log(rect.left,'150')
+        }
+        
+        if (headings.length === 0) {
+          document.getElementById('fixed-toc-container').style.display = 'none';
+          return;
+        }
+        headings.forEach(function(heading, i) {
+          if (!heading.id) {
+            heading.id = 'heading-' + i;
+          }
+        });
+        headings.forEach(function(heading) {
+          var level = parseInt(heading.tagName.substring(1));
+          var li = document.createElement('li');
+          li.style.marginLeft = (level - 1) * 15 + 'px';
+          var a = document.createElement('a');
+          a.href = '#' + heading.id;
+          a.textContent = heading.textContent;
+          a.style.color = '#555';
+          a.style.textDecoration = 'none';
+          a.onmouseover = function() { a.style.textDecoration = 'underline'; };
+          a.onmouseout = function() { a.style.textDecoration = 'none'; };
+          li.appendChild(a);
+          tocList.appendChild(li);
+        });
+      })();
+    </script>
+  </body>
+</html>
