@@ -14,7 +14,7 @@ async function sha256(message) {
 
 async function checkpasswd(userInput){
     const hash = await sha256(userInput);  // 使用 await 等待异步结果
-    if(hash=="42d2236531705047f7c50e357e0aad7c01d2b7bf25b04927cc2763df1b1aabbf"){
+    if(hash=="a89f76ad9852ec33ea1d9b8cf53af475746466209598468c21bd497584cba7cf"){
             start();
             localStorage.setItem("hexo_home_password", userInput);
             return true;//return promise 还得异步接受
